@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title> on Coding Extreme </title>
+      <title>Cvs on Coding Extreme </title>
       <generator uri="https://gohugo.io">Hugo</generator>
-    <link>http://codingextre.me/</link>
+    <link>http://codingextre.me/cv/</link>
     <language>en-us</language>
     
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
@@ -16,16 +16,6 @@
       
       <guid>http://codingextre.me/cv/cv/</guid>
       <description>&lt;p&gt;Aqui ficara o Curriculum.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello World!</title>
-      <link>http://codingextre.me/post/hello-world/</link>
-      <pubDate>Wed, 25 May 2016 22:13:30 BRT</pubDate>
-      
-      <guid>http://codingextre.me/post/hello-world/</guid>
-      <description>&lt;p&gt;Hello blog, just here, chillin&amp;rsquo; and trying to configure jekyll or hugo, wathever works.&lt;/p&gt;
 </description>
     </item>
     

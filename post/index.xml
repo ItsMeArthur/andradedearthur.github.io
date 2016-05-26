@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on codingextre.me - por Arthur de Andrade</title>
-    <link>codingextre.me/post/</link>
-    <description>Recent content in Posts on codingextre.me - por Arthur de Andrade</description>
-    <generator>Hugo -- gohugo.io</generator>
+      <title>Posts on Coding Extreme </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://codingextre.me/post/</link>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 May 2016 22:13:30 -0300</lastBuildDate>
-    <atom:link href="codingextre.me/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <updated>Wed, 25 May 2016 22:13:30 BRT</updated>
     
     <item>
       <title>Hello World!</title>
-      <link>/codingextre.me/post/hello-world/</link>
-      <pubDate>Wed, 25 May 2016 22:13:30 -0300</pubDate>
+      <link>http://codingextre.me/post/hello-world/</link>
+      <pubDate>Wed, 25 May 2016 22:13:30 BRT</pubDate>
       
-      <guid>/codingextre.me/post/hello-world/</guid>
+      <guid>http://codingextre.me/post/hello-world/</guid>
       <description>&lt;p&gt;Hello blog, just here, chillin&amp;rsquo; and trying to configure jekyll or hugo, wathever works.&lt;/p&gt;
 </description>
     </item>

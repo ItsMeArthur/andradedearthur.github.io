@@ -2,13 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/codingextre.me/</loc>
-    <lastmod>2016-05-25T22:13:30-03:00</lastmod>
+    <loc>http://codingextre.me/</loc>
+    <lastmod>2016-05-26T17:01:41-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/codingextre.me/post/hello-world/</loc>
+    <loc>http://codingextre.me/cv/cv/</loc>
+    <lastmod>2016-05-26T17:01:41-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://codingextre.me/post/hello-world/</loc>
     <lastmod>2016-05-25T22:13:30-03:00</lastmod>
   </url>
   
