@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/www.codingextre.me/</loc>
+    <lastmod>2016-05-25T22:13:30-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/www.codingextre.me/post/hello-world/</loc>
+    <lastmod>2016-05-25T22:13:30-03:00</lastmod>
+  </url>
+  
+</urlset>
