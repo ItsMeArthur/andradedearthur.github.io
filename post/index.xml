@@ -7,15 +7,248 @@
     <language>en-us</language>
     
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <updated>Wed, 25 May 2016 22:13:30 BRT</updated>
+    <updated>Sat, 04 Jun 2016 01:36:36 BRT</updated>
     
     <item>
-      <title>Hello World!</title>
-      <link>http://codingextre.me/post/hello-world/</link>
-      <pubDate>Wed, 25 May 2016 22:13:30 BRT</pubDate>
+      <title>Desenvolvimento Multiplataforma com Xamarin - Uma introdução</title>
+      <link>http://codingextre.me/post/desenvolvimento-multiplataforma-com-xamarin-introducao-rapida/</link>
+      <pubDate>Sat, 04 Jun 2016 01:36:36 BRT</pubDate>
       
-      <guid>http://codingextre.me/post/hello-world/</guid>
-      <description>&lt;p&gt;Hello blog, just here, chillin&amp;rsquo; and trying to configure jekyll or hugo, wathever works.&lt;/p&gt;
+      <guid>http://codingextre.me/post/desenvolvimento-multiplataforma-com-xamarin-introducao-rapida/</guid>
+      <description>
+
+&lt;p&gt;Quem está planejando utilizar Xamarin para o desenvolvimento de software mobile provavelmente o faz por causa do que muitos consideram o seu principal atrativo: Através desta ferramenta é possível utilizar os  recursos fundamentais da plataforma .NET para codificar as principais funcionalidades do software uma única vez, para então distribuir estas funcionalidades nos sistemas operacionais mobile mais populares, como Android, iOS e Windows Phone.&lt;/p&gt;
+
+&lt;p&gt;O processo de ter uma biblioteca de código centralizada, que é compartilhada por projetos destinados a diferentes sistemas e plataformas trás grandes benefícios, visto que isso significa que iremos corrigir bugs e problemas apenas uma vez, adicionar funcionalidades apenas uma vez, e consequentemente diminuir trabalho e custos com manutenção e testes.&lt;/p&gt;
+
+&lt;p&gt;No entanto arquitetar o nosso sistema de uma maneira na qual possamos maximizar o código compartilhado requer análise e planejamento. Devemos sempre lembrar que independentemente das plataformas alvo, haverá sempre código específico de cada plataforma em nosso projeto. De acordo com dados da Xamarin, em média de 15 a 30 por cento do código em um projeto mobile Xamarin é específico de alguma plataforma.&lt;/p&gt;
+
+&lt;p&gt;Os principais fatores em aplicativos mobile que causam a necessidade de código específico para cada plataforma são:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A camada de UI (user interface), especialmente quando não se usa Xamarin.Forms;&lt;/li&gt;
+&lt;li&gt;Os controles de tela que ficam entre o usuário e a lógica de negócios;&lt;/li&gt;
+&lt;li&gt;As funcionalidades específicas de cada plataforma.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mas que tipo de código pode ser compartilhado? Basicamente qualquer tipo de código que não dependa de uma funcionalidade ou implementação específica de uma plataforma pode ser compartilhado entre diversos projetos. Como por exemplo, lógica de negócios, manipulação de dados, e acesso a web services, dentre outros. Perceba que nenhuma destas atividades é específica de nenhuma plataforma mobile, elas são atividades comumente realizadas na .NET framework.&lt;/p&gt;
+
+&lt;p&gt;Um tipo de código que pode gerar dúvidas sobre como deve ser compartilhado é o código por detrás de formulários e controles de tela. No entanto esse código não deve ser compartilhado, visto que a sua implementação é diferente para cada tipo de plataforma. O que pode ser feito neste caso é compartilhar o código que realiza as operações, ou o trabalho em si, de cada controle. Dessa maneira é possível invocar este código, chamando a operação necessária em cada controle de tela sem a necessidade de escrever código repetido para Android, iOS ou Windows Phone.&lt;/p&gt;
+
+&lt;p&gt;Sempre que você se encontrar escrevendo código repetido em mais de uma plataforma, é hora de analisar se é hora de refatorar este código de maneira que possa ser escrito apenas uma vez e compartilhado em mais de uma plataforma.&lt;/p&gt;
+
+&lt;p&gt;Mas e quanto estamos escrevendo código que pertença a uma biblioteca compartilhada, que irá desempenhar o mesmo trabalho e ter a mesma funcionalidade em todas as plataformas, mas que dependendo da plataforma onde este código será executado, a sua implementação precise ser um pouco diferente? Nesse caso precisamos criar uma abstração da implementação deste código, mas antes de se dar ao trabalho é recomendável verificar se essa abstração já não existe na framework. Existem diversos lugares onde podemos verificar.&lt;/p&gt;
+
+&lt;p&gt;O Xamarin lhe oferece diversas bibliotecas multi-plataformas que possuem uma API unificada para acessar funcionalidades específicas de cada plataforma, iOS, Windows Phone ou Android. Essas bibliotecas são open-source e estão disponíveis no Github (github.com/xamarin) para que você possa utilizar (ou modificar) como quiser.&lt;/p&gt;
+
+&lt;p&gt;Existem diversos componentes que o Xamarin oferece suporte, entre eles estão:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Xamarin.Social&lt;/strong&gt;: Oferece funcionalidades de redes sociais ao seu aplicativo, e lhe permite por exemplo, postar no facebook ou twitter.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Xamarin.Auth&lt;/strong&gt;: É utilizado para suporte a oauth e se conectar de maneira segura a webservices.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Xamarin.Mobile&lt;/strong&gt;: Provê acesso a funcionalidades de localização, câmera e fotos.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Segue um exemplo de código compartilhado que necessita de acesso a funcionalidades específicas de cada plataforma, e que o consegue com através de abstração já existente no &lt;em&gt;Xamarin.Mobile&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;async void OnTakePicture(object sender, EventArgs e)
+{
+  var picker = new MediaPicker();
+  if (picker.IsCameraAvailable)
+  {
+    MediaFile photo = await picker.TakePhotoAsync(
+      new StoreCameraMediaOptions{
+        Name = &#39;Photo.jpg&#39;,
+        DefaultCamera = CameraDevice.Rear
+      }
+    );
+    string filePath = photo.Path;
+    Stream photoStream = photo.GetStream();
+    //...
+    //...
+    //...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O &lt;em&gt;MediaPicker&lt;/em&gt; no código acima fornece acesso a foto, como arquivo e como stream, para que se possa obter esse arquivo e fazer com ele o que for necessário.&lt;/p&gt;
+
+&lt;p&gt;Esse código poderia muito bem ter sido escrito de maneira específica para cada plataforma, mas caso os sistemas alvo da sua aplicação sejam iOS, Android e Windows Phone esse código teria que ser reescrito três vezes. Antes de começar o desenvolvimento de uma aplicação multiplataforma utilizando Xamarin no entanto, é necessário escolher o tipo de projeto que desejamos criar, &lt;strong&gt;Shared Projets&lt;/strong&gt; ou &lt;strong&gt;Portable Class Libraries&lt;/strong&gt; (PCL).&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;shared-projects:96b652beefcc5ce313b3414ed24b5748&#34;&gt;Shared Projects&lt;/h2&gt;
+
+&lt;p&gt;Um Shared Project (ou Projeto Compartilhado) é um tipo especial de projeto cujo principal objetivo é escrever código que é compartilhado por diversos outros projetos específicos para cada plataforma. No entanto, ao contrário de uma &lt;em&gt;Class Library&lt;/em&gt; convencional, os fontes de um Shared Project são compilados como parte de cada projeto que o referenciam.&lt;/p&gt;
+
+&lt;p&gt;O que é fundamental ententer sobre Shared Projects é que eles são apenas um contêiner para o código compartilhado por outros projetos, e que ao contrário do que é comum em se tratando de bibliotecas de código, eles não geram nenhum tipo de output, sejam arquivos binários ou dll&amp;rsquo;s. Na realidade um Shared Project por si só nem mesmo pode ser compilado, para que isso aconteça é necessário que ele seja adicionado a outro projeto para que o compilador processe os arquivos. Internamente o Shared Project é considerado parte do projeto no qual ele é referenciado, dessa maneira até mesmo as configurações de compilação deste são aplicadas aos arquivos do Shared Project.&lt;/p&gt;
+
+&lt;p&gt;Devido ao fato de o código do Shared Project fazer parte dos projetos aos quais ele é adicionado, é bastante fácil acessar funcionalidades específicas de cada plataforma de dentro do Shared Project. Mas surge a pergunta, como lidar com esse código específico dentro do Shared Project? Afinal, o objetivo do Shared Project é armazenar código que será compartilhado por todos os projetos de cada plataforma. É necessário então estruturar o código específico dentro do Shared Project de maneira que este código não comprometa a capacidade do Shared Project de ser compartilhado por projetos de outras plataformas.&lt;/p&gt;
+
+&lt;p&gt;Ou seja, a parte fundamental é fazer com que, por exemplo o código específico para plataforma Android dentro do Shared Project seja isolado do código compartilhado para todas as plataformas. Existem três abordagens que podem ser utilizadas quando estruturando o código em um Shared Project.&lt;/p&gt;
+
+&lt;h3 id=&#34;conditional-compilation:96b652beefcc5ce313b3414ed24b5748&#34;&gt;Conditional Compilation&lt;/h3&gt;
+
+&lt;p&gt;Através das diretivas de compilação podemos especificar implementações específicas para cada plataforma, uma vez que o compilador determina a plataforma apenas a sua implementação correspondente será incluída nos arquivos binários.&lt;/p&gt;
+
+&lt;p&gt;Exemplo de um código acessando funcionalidades específicas de cada plataforma de maneira abstrata dentro de um Shared Project usando diretivas condicionais de compilação:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public static string DatabaseFile
+{
+  get
+  {
+string fileName = &amp;quot;database.db3&amp;quot;;
+
+#if WINDOWS_PHONE || WINDOWS_UWP
+  string path = fileName;
+#elif __ANDROID__
+  string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), fileName);
+#elif __IOS__
+  string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+  string path = Path.Combine(docPath, &amp;quot;..&amp;quot;, &amp;quot;Library&amp;quot;, filename);
+#endif
+
+return path;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O lado negativo desta abordagem é a manutenção, visto que sem compilar  para todas as plataformas é difícil verificar o que será compilado, e que as mudanças realizadas em um bloco de código para uma plataforma não irão afetar outra plataforma.&lt;/p&gt;
+
+&lt;h3 id=&#34;class-mirroring:96b652beefcc5ce313b3414ed24b5748&#34;&gt;Class Mirroring&lt;/h3&gt;
+
+&lt;p&gt;Class Mirroring é uma abordagem mais estruturada para permitir o código específico de uma plataforma dentro de um Shared Project.&lt;/p&gt;
+
+&lt;p&gt;Na prática o class mirroring funciona da seguinte maneira. No nosso Shared Project (o código que será compartilhado por todos os projetos) ao fazer o uso de um recurso que terá uma diferente implementação em cada plataforma, nós encapsulamos essa funcionalidade em uma classe específica no projeto de cada plataforma.&lt;/p&gt;
+
+&lt;p&gt;Por exemplo, tomemos como exemplo o seguinte código contido no Shared Project e que será utilizado pelos projetos de plataformas diferentes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class NoteManager
+{
+  void CloudBackupComplete()
+  {
+    Alert.Show(&amp;quot;Sucesso!&amp;quot;, &amp;quot;Backup das anotações realizado com sucesso.&amp;quot;);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Neste trecho de código compartilhado, independentemente do sistema operacional em que a aplicação estiver executando o objetivo é o mesmo, notificar o usuário de que o backup foi efetuado com sucesso. No entanto cada sistema operacional, iOS, Android ou Windows Phone possui uma implementação diferente de como mostrar uma mensagem ao usuário.&lt;/p&gt;
+
+&lt;p&gt;Nessa situação para tirar proveito do conceito de Class Mirroring devemos lembrar do fato de que, apesar dos arquivos do Shared Project estarem em um projeto (ou contêiner) diferente, eles são incorporados pelo projeto de cada plataforma diferente. Desta maneira, podemos criar dentro de cada projeto específico uma classe &lt;em&gt;Alert&lt;/em&gt; com a implementação plataform-specific do método &lt;em&gt;Show&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Classe Alert no projeto iOS:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;internal class Alert
+{
+  internal static void Show(string title, string message)
+  {
+    new UIAlertView(title, message, null, &amp;quot;OK&amp;quot;).Show();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Classe Alert no projeto Android:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;internal class Alert
+{
+  internal static void Show(string title, string message)
+  {
+    new AlertDialog.Builder(Application.Context).SetTitle(title).SetMessage(message);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Essa abordagem é mais fácil de manter do que utilizando Conditinal Compilation, principalmente em termos de legibilidade e mantenabilidade&lt;/p&gt;
+
+&lt;h3 id=&#34;partial-classes-methods:96b652beefcc5ce313b3414ed24b5748&#34;&gt;Partial Classes + Methods&lt;/h3&gt;
+
+&lt;p&gt;Essa abordagem em como lidar com código específico dentro de um Shared Project envolve classes e métodos parciais, e é de certa forma uma variação da abordagem utilizando class mirroring.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nós temos uma classe parcial quando dividimos as definições de uma classe entre vários arquivos de código-fonte.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A base dessa abordagem é a possibilidade de ter parte de uma classe definida nos arquivos compartilhados do Shared Projet, e adicionar as partes específicas de cada plataforma nos projetos específicos de cada plataforma.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Exemplo de partial class no Shared Project:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;partial class NoteManager
+{
+  void OnDeleteNote()
+  {
+    if (ShowAlert(&amp;quot;Aviso&amp;quot;, &amp;quot;...&amp;quot;))
+    {
+      //...
+      //...
+      //...
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Perceba que esta classe não possui nenhuma definição para o método &lt;em&gt;ShowAlert&lt;/em&gt;, essa definição será implementada na classe parcial dentro do projeto específico de cada plataforma.
+&lt;strong&gt;&lt;em&gt;Exemplo da classe parcial na implementação para iOS:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;partial class NoteManager
+{
+  bool ShowAlert(string title, string message)
+  {
+    //...
+    //...
+    //...
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Além de classes, também podemos ter métodos parciais, desde que estes estejam contidos em classes parciais. Ao definir um método como parcial nós dizemos ao compilador que podemos ter ou não uma implementação do método definida em outro arquivo-fonte.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Exemplo de método parcial no Shared Project:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;partial class NoteManager
+{
+  partial void ShowPrintSettings();
+
+  void PrintNote(NoteItem note)
+  {
+    //...
+    //...
+    //...
+    ShowPrintSettings();
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ao compilar este código, o compilador irá buscar uma implementação do método &lt;em&gt;ShowPrintSettings&lt;/em&gt; em outro código fonte, caso essa implementação seja encontrada, como por exemplo no projeto para o sistema Android, essa implementação será utilizada.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Exemplo de implementação do método parcial no projeto Android:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;partial class NoteManager
+{
+  ShowPrintSettings();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Caso não seja encontrada nenhuma implementação para este método, todas as referências para o mesmo serão simplesmente removidas.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;portable-class-libraries:96b652beefcc5ce313b3414ed24b5748&#34;&gt;Portable Class Libraries&lt;/h2&gt;
+
+&lt;p&gt;Uma Portable Class Library (ou uma biblioteca portátil) é uma Class Library capaz de rodar em múltiplas plataformas .NET, como desktop, Xamarin.Android, XAmarin.iOS, Windows Phone e etc. Portable Class Libraries fornecem uma maneira mais estruturada de compartilhar código entre diversos projetos, no entanto requerem mais planejamento quando utilizando os recursos específicos de cada plataforma.&lt;/p&gt;
+
+&lt;p&gt;Portable Class Library oferecem uma maneira de criar assemblies com alvos em plataformas diferentes, e ao criar uma nova Portable Class Library a IDE irá solicitar quais os tipos de plataformas as quais você deseja oferecer suporte.&lt;/p&gt;
+
+&lt;p&gt;Ao contrário do que acontece com um Shared Project, o código contigo em uma Portable Class Library não é incorporado e compilado juntamente com cada projeto, em vez disso, é gerado um arquivo binário (DLL) que pode ser utilizado por diferentes plataformas, como .NET Framework, UWP, Windows 8, Windows Phone e Xamarin.&lt;/p&gt;
+
+&lt;p&gt;As funcionalidades disponíveis por uma Portable Class Library serão limitadas de acordo com a quantidade de plataformas a qual ela oferece suporte, uma vez que, para manter a compatibilidade entre todas as plataformas a PCL irá restringir as suas funcionalidades de acordo com a plataforma mais limitada. Assim, quanto maior a quantidade de plataformas suportadas por uma PCL, mais restrita a mesma será.&lt;/p&gt;
+
+&lt;p&gt;Mas e se o código em uma PCL é restrito pelas plataformas as quais ela precisa atender, como lidar com código específico de determinada plataforma dentro de uma PCL? Fica para o próximo artigo.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Por Arthur D. de Andrade&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;andradedearthur@gmail.com&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     

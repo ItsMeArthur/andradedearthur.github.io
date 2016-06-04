@@ -1,0 +1,392 @@
+  <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title> Desenvolvimento Multiplataforma com Xamarin - Uma introdução &middot; Coding Extreme </title>
+    
+    <link rel="stylesheet" type="text/css" href="http://codingextre.me/css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://codingextre.me/css/lightGallery.css" />
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://codingextre.me/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="http://codingextre.me/favicon.ico">
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Coding Extreme" />
+    
+    <script src="http://codingextre.me/js/jquery.min.js"></script>
+    <script src="http://codingextre.me/js/main.min.js">
+    </script>
+</head>
+
+  <body>
+    <div id="scriptHeader">
+    <span class="mobile btn-mobile-menu">
+            <i class="fa fa-bars btn-mobile-menu__icon"></i>
+            <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
+    </span>
+    <header class="
+        
+            panel-cover panel-cover--collapsed
+        "  style="background-image: url(/images/mobile-lap-bg.jpg)" >
+    <div class="panel-main">
+        <div class="panel-main__inner panel-inverted">
+            <div class="panel-main__content"> 
+                <a href="http://codingextre.me/" title="link to homepage for Coding Extreme"> <img src="http://codingextre.me/img/logo.jpg" width="80" alt="Coding Extreme logo" class="panel-cover__logo logo" /> </a> 
+                <h1 class="panel-cover__title panel-title">
+                    <a href="http://codingextre.me/"  title="link to homepage for Coding Extreme">Coding Extreme</a>
+                </h1>
+                <hr class="panel-cover__divider" />
+                <p class="panel-cover__description">  por Arthur de Andrade  </p>
+                <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                <div class="navigation-wrapper">
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="http://codingextre.me#blog" title="link to Coding Extreme blog" class="blog-button">Blog</a> </li></br>
+                            
+                            
+                       </ul>
+                    </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/andradedearthur" title="@andradedearthur on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/andradedearthur" title="andradedearthur on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/andradedearthur/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="mailto:andradedearthur@gmail.com" title="Email andradedearthur@gmail.com"> <i class='fa fa-envelope-o'></i> <span class="label">Email</span> </a>
+        </li>  </ul>
+</nav>
+ </div>
+            </div>
+        </div>
+        <div class="panel-cover--overlay"></div>
+    </div>
+</header>
+</div>
+<noscript>
+    <style>
+        #scriptHeader {display:none;}
+        .navigation-wrapper{
+            display: block;
+            top: 0;
+        }
+    </style>
+
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/mobile-lap-bg.jpg)">
+        <div class="panel-main">
+            <div class="panel-main__inner panel-inverted">
+                <div class="panel-main__content"> 
+                    <a href="http://codingextre.me/" title="link to homepage for Coding Extreme"> <img src="http://codingextre.me/img/logo.jpg" width="80" alt="Coding Extreme logo" class="panel-cover__logo logo" /> </a> 
+                    <h1 class="panel-cover__title panel-title">
+                        <a href="http://codingextre.me/"  title="link to homepage for Coding Extreme">Coding Extreme</a>
+                    </h1>
+                    <hr class="panel-cover__divider" />
+                    <p class="panel-cover__description">  por Arthur de Andrade  </p>
+                    <hr class="panel-cover__divider panel-cover__divider--secondary" />
+                    <div class="navigation-wrapper">
+                        <nav class="cover-navigation cover-navigation--primary">
+                            <ul class="navigation">
+                                <li class="navigation__item"><a href="http://codingextre.me/#blog" title="link to Coding Extreme blog" class="blog-button">Blog</a> </li></br>
+                                
+                                
+                           </ul>
+                        </nav> <nav class="cover-navigation navigation--social">
+    <ul class="navigation"> 
+        
+        <li class="navigation__item">
+            <a href="http://twitter.com/andradedearthur" title="@andradedearthur on Twitter"> <i class='fa fa-twitter'></i> <span class="label">Twitter</span> </a>
+        </li>   
+        
+        <li class="navigation__item">
+            <a href="https://github.com/andradedearthur" title="andradedearthur on github"> <i class='fa fa-github'></i> <span class="label">Github</span> </a>
+        </li>  </br>  
+        
+        <li class="navigation__item">
+            <a href="http://no.linkedin.com/in/andradedearthur/en" title="Linkedin"> <i class='fa fa-linkedin'></i> <span class="label">Linkedin</span> </a>
+        </li>  
+        
+        <li class="navigation__item">
+            <a href="mailto:andradedearthur@gmail.com" title="Email andradedearthur@gmail.com"> <i class='fa fa-envelope-o'></i> <span class="label">Email</span> </a>
+        </li>  </ul>
+</nav>
+ </div>
+                </div>
+            </div>
+            <div class="panel-cover--overlay"></div>
+        </div>
+    </header>
+</noscript>
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <div class="post">
+          <h1>Desenvolvimento Multiplataforma com Xamarin - Uma introdução</h1>
+          <span class="post-date">Sat, Jun 4, 2016</span>
+          
+
+<p>Quem está planejando utilizar Xamarin para o desenvolvimento de software mobile provavelmente o faz por causa do que muitos consideram o seu principal atrativo: Através desta ferramenta é possível utilizar os  recursos fundamentais da plataforma .NET para codificar as principais funcionalidades do software uma única vez, para então distribuir estas funcionalidades nos sistemas operacionais mobile mais populares, como Android, iOS e Windows Phone.</p>
+
+<p>O processo de ter uma biblioteca de código centralizada, que é compartilhada por projetos destinados a diferentes sistemas e plataformas trás grandes benefícios, visto que isso significa que iremos corrigir bugs e problemas apenas uma vez, adicionar funcionalidades apenas uma vez, e consequentemente diminuir trabalho e custos com manutenção e testes.</p>
+
+<p>No entanto arquitetar o nosso sistema de uma maneira na qual possamos maximizar o código compartilhado requer análise e planejamento. Devemos sempre lembrar que independentemente das plataformas alvo, haverá sempre código específico de cada plataforma em nosso projeto. De acordo com dados da Xamarin, em média de 15 a 30 por cento do código em um projeto mobile Xamarin é específico de alguma plataforma.</p>
+
+<p>Os principais fatores em aplicativos mobile que causam a necessidade de código específico para cada plataforma são:</p>
+
+<ul>
+<li>A camada de UI (user interface), especialmente quando não se usa Xamarin.Forms;</li>
+<li>Os controles de tela que ficam entre o usuário e a lógica de negócios;</li>
+<li>As funcionalidades específicas de cada plataforma.</li>
+</ul>
+
+<p>Mas que tipo de código pode ser compartilhado? Basicamente qualquer tipo de código que não dependa de uma funcionalidade ou implementação específica de uma plataforma pode ser compartilhado entre diversos projetos. Como por exemplo, lógica de negócios, manipulação de dados, e acesso a web services, dentre outros. Perceba que nenhuma destas atividades é específica de nenhuma plataforma mobile, elas são atividades comumente realizadas na .NET framework.</p>
+
+<p>Um tipo de código que pode gerar dúvidas sobre como deve ser compartilhado é o código por detrás de formulários e controles de tela. No entanto esse código não deve ser compartilhado, visto que a sua implementação é diferente para cada tipo de plataforma. O que pode ser feito neste caso é compartilhar o código que realiza as operações, ou o trabalho em si, de cada controle. Dessa maneira é possível invocar este código, chamando a operação necessária em cada controle de tela sem a necessidade de escrever código repetido para Android, iOS ou Windows Phone.</p>
+
+<p>Sempre que você se encontrar escrevendo código repetido em mais de uma plataforma, é hora de analisar se é hora de refatorar este código de maneira que possa ser escrito apenas uma vez e compartilhado em mais de uma plataforma.</p>
+
+<p>Mas e quanto estamos escrevendo código que pertença a uma biblioteca compartilhada, que irá desempenhar o mesmo trabalho e ter a mesma funcionalidade em todas as plataformas, mas que dependendo da plataforma onde este código será executado, a sua implementação precise ser um pouco diferente? Nesse caso precisamos criar uma abstração da implementação deste código, mas antes de se dar ao trabalho é recomendável verificar se essa abstração já não existe na framework. Existem diversos lugares onde podemos verificar.</p>
+
+<p>O Xamarin lhe oferece diversas bibliotecas multi-plataformas que possuem uma API unificada para acessar funcionalidades específicas de cada plataforma, iOS, Windows Phone ou Android. Essas bibliotecas são open-source e estão disponíveis no Github (github.com/xamarin) para que você possa utilizar (ou modificar) como quiser.</p>
+
+<p>Existem diversos componentes que o Xamarin oferece suporte, entre eles estão:</p>
+
+<ul>
+<li><p><strong>Xamarin.Social</strong>: Oferece funcionalidades de redes sociais ao seu aplicativo, e lhe permite por exemplo, postar no facebook ou twitter.</p></li>
+
+<li><p><strong>Xamarin.Auth</strong>: É utilizado para suporte a oauth e se conectar de maneira segura a webservices.</p></li>
+
+<li><p><strong>Xamarin.Mobile</strong>: Provê acesso a funcionalidades de localização, câmera e fotos.</p></li>
+</ul>
+
+<p>Segue um exemplo de código compartilhado que necessita de acesso a funcionalidades específicas de cada plataforma, e que o consegue com através de abstração já existente no <em>Xamarin.Mobile</em>:</p>
+
+<pre><code>async void OnTakePicture(object sender, EventArgs e)
+{
+  var picker = new MediaPicker();
+  if (picker.IsCameraAvailable)
+  {
+    MediaFile photo = await picker.TakePhotoAsync(
+      new StoreCameraMediaOptions{
+        Name = 'Photo.jpg',
+        DefaultCamera = CameraDevice.Rear
+      }
+    );
+    string filePath = photo.Path;
+    Stream photoStream = photo.GetStream();
+    //...
+    //...
+    //...
+  }
+}
+</code></pre>
+
+<p>O <em>MediaPicker</em> no código acima fornece acesso a foto, como arquivo e como stream, para que se possa obter esse arquivo e fazer com ele o que for necessário.</p>
+
+<p>Esse código poderia muito bem ter sido escrito de maneira específica para cada plataforma, mas caso os sistemas alvo da sua aplicação sejam iOS, Android e Windows Phone esse código teria que ser reescrito três vezes. Antes de começar o desenvolvimento de uma aplicação multiplataforma utilizando Xamarin no entanto, é necessário escolher o tipo de projeto que desejamos criar, <strong>Shared Projets</strong> ou <strong>Portable Class Libraries</strong> (PCL).</p>
+
+<hr />
+
+<h2 id="shared-projects:96b652beefcc5ce313b3414ed24b5748">Shared Projects</h2>
+
+<p>Um Shared Project (ou Projeto Compartilhado) é um tipo especial de projeto cujo principal objetivo é escrever código que é compartilhado por diversos outros projetos específicos para cada plataforma. No entanto, ao contrário de uma <em>Class Library</em> convencional, os fontes de um Shared Project são compilados como parte de cada projeto que o referenciam.</p>
+
+<p>O que é fundamental ententer sobre Shared Projects é que eles são apenas um contêiner para o código compartilhado por outros projetos, e que ao contrário do que é comum em se tratando de bibliotecas de código, eles não geram nenhum tipo de output, sejam arquivos binários ou dll&rsquo;s. Na realidade um Shared Project por si só nem mesmo pode ser compilado, para que isso aconteça é necessário que ele seja adicionado a outro projeto para que o compilador processe os arquivos. Internamente o Shared Project é considerado parte do projeto no qual ele é referenciado, dessa maneira até mesmo as configurações de compilação deste são aplicadas aos arquivos do Shared Project.</p>
+
+<p>Devido ao fato de o código do Shared Project fazer parte dos projetos aos quais ele é adicionado, é bastante fácil acessar funcionalidades específicas de cada plataforma de dentro do Shared Project. Mas surge a pergunta, como lidar com esse código específico dentro do Shared Project? Afinal, o objetivo do Shared Project é armazenar código que será compartilhado por todos os projetos de cada plataforma. É necessário então estruturar o código específico dentro do Shared Project de maneira que este código não comprometa a capacidade do Shared Project de ser compartilhado por projetos de outras plataformas.</p>
+
+<p>Ou seja, a parte fundamental é fazer com que, por exemplo o código específico para plataforma Android dentro do Shared Project seja isolado do código compartilhado para todas as plataformas. Existem três abordagens que podem ser utilizadas quando estruturando o código em um Shared Project.</p>
+
+<h3 id="conditional-compilation:96b652beefcc5ce313b3414ed24b5748">Conditional Compilation</h3>
+
+<p>Através das diretivas de compilação podemos especificar implementações específicas para cada plataforma, uma vez que o compilador determina a plataforma apenas a sua implementação correspondente será incluída nos arquivos binários.</p>
+
+<p>Exemplo de um código acessando funcionalidades específicas de cada plataforma de maneira abstrata dentro de um Shared Project usando diretivas condicionais de compilação:</p>
+
+<pre><code>public static string DatabaseFile
+{
+  get
+  {
+string fileName = &quot;database.db3&quot;;
+
+#if WINDOWS_PHONE || WINDOWS_UWP
+  string path = fileName;
+#elif __ANDROID__
+  string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), fileName);
+#elif __IOS__
+  string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+  string path = Path.Combine(docPath, &quot;..&quot;, &quot;Library&quot;, filename);
+#endif
+
+return path;
+  }
+}
+</code></pre>
+
+<p>O lado negativo desta abordagem é a manutenção, visto que sem compilar  para todas as plataformas é difícil verificar o que será compilado, e que as mudanças realizadas em um bloco de código para uma plataforma não irão afetar outra plataforma.</p>
+
+<h3 id="class-mirroring:96b652beefcc5ce313b3414ed24b5748">Class Mirroring</h3>
+
+<p>Class Mirroring é uma abordagem mais estruturada para permitir o código específico de uma plataforma dentro de um Shared Project.</p>
+
+<p>Na prática o class mirroring funciona da seguinte maneira. No nosso Shared Project (o código que será compartilhado por todos os projetos) ao fazer o uso de um recurso que terá uma diferente implementação em cada plataforma, nós encapsulamos essa funcionalidade em uma classe específica no projeto de cada plataforma.</p>
+
+<p>Por exemplo, tomemos como exemplo o seguinte código contido no Shared Project e que será utilizado pelos projetos de plataformas diferentes:</p>
+
+<pre><code>public class NoteManager
+{
+  void CloudBackupComplete()
+  {
+    Alert.Show(&quot;Sucesso!&quot;, &quot;Backup das anotações realizado com sucesso.&quot;);
+  }
+}
+</code></pre>
+
+<p>Neste trecho de código compartilhado, independentemente do sistema operacional em que a aplicação estiver executando o objetivo é o mesmo, notificar o usuário de que o backup foi efetuado com sucesso. No entanto cada sistema operacional, iOS, Android ou Windows Phone possui uma implementação diferente de como mostrar uma mensagem ao usuário.</p>
+
+<p>Nessa situação para tirar proveito do conceito de Class Mirroring devemos lembrar do fato de que, apesar dos arquivos do Shared Project estarem em um projeto (ou contêiner) diferente, eles são incorporados pelo projeto de cada plataforma diferente. Desta maneira, podemos criar dentro de cada projeto específico uma classe <em>Alert</em> com a implementação plataform-specific do método <em>Show</em>.</p>
+
+<p><strong><em>Classe Alert no projeto iOS:</em></strong></p>
+
+<pre><code>internal class Alert
+{
+  internal static void Show(string title, string message)
+  {
+    new UIAlertView(title, message, null, &quot;OK&quot;).Show();
+  }
+}
+</code></pre>
+
+<p><strong><em>Classe Alert no projeto Android:</em></strong></p>
+
+<pre><code>internal class Alert
+{
+  internal static void Show(string title, string message)
+  {
+    new AlertDialog.Builder(Application.Context).SetTitle(title).SetMessage(message);
+  }
+}
+</code></pre>
+
+<p>Essa abordagem é mais fácil de manter do que utilizando Conditinal Compilation, principalmente em termos de legibilidade e mantenabilidade</p>
+
+<h3 id="partial-classes-methods:96b652beefcc5ce313b3414ed24b5748">Partial Classes + Methods</h3>
+
+<p>Essa abordagem em como lidar com código específico dentro de um Shared Project envolve classes e métodos parciais, e é de certa forma uma variação da abordagem utilizando class mirroring.</p>
+
+<blockquote>
+<p><strong>Nós temos uma classe parcial quando dividimos as definições de uma classe entre vários arquivos de código-fonte.</strong></p>
+</blockquote>
+
+<p>A base dessa abordagem é a possibilidade de ter parte de uma classe definida nos arquivos compartilhados do Shared Projet, e adicionar as partes específicas de cada plataforma nos projetos específicos de cada plataforma.</p>
+
+<p><strong><em>Exemplo de partial class no Shared Project:</em></strong></p>
+
+<pre><code>partial class NoteManager
+{
+  void OnDeleteNote()
+  {
+    if (ShowAlert(&quot;Aviso&quot;, &quot;...&quot;))
+    {
+      //...
+      //...
+      //...
+    }
+  }
+}
+</code></pre>
+
+<p>Perceba que esta classe não possui nenhuma definição para o método <em>ShowAlert</em>, essa definição será implementada na classe parcial dentro do projeto específico de cada plataforma.
+<strong><em>Exemplo da classe parcial na implementação para iOS:</em></strong></p>
+
+<pre><code>partial class NoteManager
+{
+  bool ShowAlert(string title, string message)
+  {
+    //...
+    //...
+    //...
+  }
+}
+</code></pre>
+
+<p>Além de classes, também podemos ter métodos parciais, desde que estes estejam contidos em classes parciais. Ao definir um método como parcial nós dizemos ao compilador que podemos ter ou não uma implementação do método definida em outro arquivo-fonte.</p>
+
+<p><strong><em>Exemplo de método parcial no Shared Project:</em></strong></p>
+
+<pre><code>partial class NoteManager
+{
+  partial void ShowPrintSettings();
+
+  void PrintNote(NoteItem note)
+  {
+    //...
+    //...
+    //...
+    ShowPrintSettings();
+  }
+}
+</code></pre>
+
+<p>Ao compilar este código, o compilador irá buscar uma implementação do método <em>ShowPrintSettings</em> em outro código fonte, caso essa implementação seja encontrada, como por exemplo no projeto para o sistema Android, essa implementação será utilizada.</p>
+
+<p><strong><em>Exemplo de implementação do método parcial no projeto Android:</em></strong></p>
+
+<pre><code>partial class NoteManager
+{
+  ShowPrintSettings();
+}
+</code></pre>
+
+<p>Caso não seja encontrada nenhuma implementação para este método, todas as referências para o mesmo serão simplesmente removidas.</p>
+
+<hr />
+
+<h2 id="portable-class-libraries:96b652beefcc5ce313b3414ed24b5748">Portable Class Libraries</h2>
+
+<p>Uma Portable Class Library (ou uma biblioteca portátil) é uma Class Library capaz de rodar em múltiplas plataformas .NET, como desktop, Xamarin.Android, XAmarin.iOS, Windows Phone e etc. Portable Class Libraries fornecem uma maneira mais estruturada de compartilhar código entre diversos projetos, no entanto requerem mais planejamento quando utilizando os recursos específicos de cada plataforma.</p>
+
+<p>Portable Class Library oferecem uma maneira de criar assemblies com alvos em plataformas diferentes, e ao criar uma nova Portable Class Library a IDE irá solicitar quais os tipos de plataformas as quais você deseja oferecer suporte.</p>
+
+<p>Ao contrário do que acontece com um Shared Project, o código contigo em uma Portable Class Library não é incorporado e compilado juntamente com cada projeto, em vez disso, é gerado um arquivo binário (DLL) que pode ser utilizado por diferentes plataformas, como .NET Framework, UWP, Windows 8, Windows Phone e Xamarin.</p>
+
+<p>As funcionalidades disponíveis por uma Portable Class Library serão limitadas de acordo com a quantidade de plataformas a qual ela oferece suporte, uma vez que, para manter a compatibilidade entre todas as plataformas a PCL irá restringir as suas funcionalidades de acordo com a plataforma mais limitada. Assim, quanto maior a quantidade de plataformas suportadas por uma PCL, mais restrita a mesma será.</p>
+
+<p>Mas e se o código em uma PCL é restrito pelas plataformas as quais ela precisa atender, como lidar com código específico de determinada plataforma dentro de uma PCL? Fica para o próximo artigo.</p>
+
+<p><strong>Por Arthur D. de Andrade</strong></p>
+
+<p><em>andradedearthur@gmail.com</em></p>
+
+        </div>
+        <div class="sharing">
+<a href="https://twitter.com/intent/tweet?status=Desenvolvimento%20Multiplataforma%20com%20Xamarin%20-%20Uma%20introdu%c3%a7%c3%a3o-http%3a%2f%2fcodingextre.me%2fpost%2fdesenvolvimento-multiplataforma-com-xamarin-introducao-rapida%2f" target="_blank" title="Follow me on Twitter" class="twitter">
+<span class="fa fa-twitter-square fa-3x"></span></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fcodingextre.me%2fpost%2fdesenvolvimento-multiplataforma-com-xamarin-introducao-rapida%2f" target="_blank" title="Join me on Facebook" class="facebook">
+<span class="fa fa-facebook-square fa-3x"></span></a>
+<a href="https://plus.google.com/share?url=http%3a%2f%2fcodingextre.me%2fpost%2fdesenvolvimento-multiplataforma-com-xamarin-introducao-rapida%2f" target="_blank" title="Google+" class="googleplus">
+<span class="fa fa-google-plus-square fa-3x"></span></a>
+<a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fcodingextre.me%2fpost%2fdesenvolvimento-multiplataforma-com-xamarin-introducao-rapida%2f&title=Desenvolvimento%20Multiplataforma%20com%20Xamarin%20-%20Uma%20introdu%c3%a7%c3%a3o" target="_blank" title="LinkedIn" class="linkedin">
+<span class="fa fa-linkedin-square fa-3x"></span></a>
+<a href="http://www.reddit.com/submit?url=http%3a%2f%2fcodingextre.me%2fpost%2fdesenvolvimento-multiplataforma-com-xamarin-introducao-rapida%2f" target="_blank" title="Reddit" class="reddit"><span class="fa fa-reddit-square fa-3x"></span></a>
+<a href="http://www.stumbleupon.com/submit?url=http%3a%2f%2fcodingextre.me%2fpost%2fdesenvolvimento-multiplataforma-com-xamarin-introducao-rapida%2f" target="_blank" title="StumbleUpon" class="stumbleupon"><span class="fa fa-stumbleupon fa-3x">
+</span></a>
+</div>
+        
+
+
+
+      </div>
+    </div>
+
+  </body>
+  
+</html>

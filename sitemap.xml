@@ -3,18 +3,18 @@
   
   <url>
     <loc>http://codingextre.me/</loc>
-    <lastmod>2016-05-26T17:01:41-03:00</lastmod>
+    <lastmod>2016-06-04T01:36:36-03:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://codingextre.me/post/desenvolvimento-multiplataforma-com-xamarin-introducao-rapida/</loc>
+    <lastmod>2016-06-04T01:36:36-03:00</lastmod>
   </url>
   
   <url>
     <loc>http://codingextre.me/cv/cv/</loc>
     <lastmod>2016-05-26T17:01:41-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://codingextre.me/post/hello-world/</loc>
-    <lastmod>2016-05-25T22:13:30-03:00</lastmod>
   </url>
   
 </urlset>
