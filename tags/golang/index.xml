@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Golang on Coding Extreme </title>
+      <generator uri="https://gohugo.io">Hugo</generator>
+    <link>http://codingextre.me/tags/golang/</link>
+    <language>en-us</language>
+    
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
+    <updated>Sat, 04 Jun 2016 11:45:11 BRT</updated>
+    
+    <item>
+      <title>about</title>
+      <link>http://codingextre.me/about/</link>
+      <pubDate>Sat, 04 Jun 2016 11:45:11 BRT</pubDate>
+      
+      <guid>http://codingextre.me/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>curriculo</title>
+      <link>http://codingextre.me/cv/curriculo/</link>
+      <pubDate>Sat, 04 Jun 2016 10:50:48 BRT</pubDate>
+      
+      <guid>http://codingextre.me/cv/curriculo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
